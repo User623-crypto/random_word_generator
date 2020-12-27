@@ -1,3 +1,9 @@
 docker-data
 .env
 node_modules
+/.idea/runConfigurations/bin_www.xml
+/.idea/jsLibraryMappings.xml
+/.idea/modules.xml
+/.idea/random_word_generator.iml
+/.idea/vcs.xml
+/.idea/workspace.xml
