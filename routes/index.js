@@ -1,41 +1,11 @@
-var express = require('express');
-var router = express.Router();
-const mysql = require('mysql2');
-
-// create the connection to database
-const connection = mysql.createConnection({
-  host: 'localhost',
-  port:8899,
-  user: 'root',
-  password:'testing1234',
-  database: 'users'
-});
-
+const express = require('express');
+const router = express.Router();
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', function(req, res) {
+  // res.render('index', { title: 'Express' });
+  res.json({message:"🎉🎉🐱‍🏍 Go to /random to get a randomWord 🤞🐱‍👓🎉🙌",
+  query:"?limit=1  to return as much words as needed in this case 1"})
 });
 
-router.post('/',  function(req, res, next) {
-  name = req.body.name;
-  email = req.body.email;
-  console.log(name + "  "+email);
-  query = `INSERT INTO user 
-            (
-                name, email
-            )
-            VALUES
-            (
-                ?, ?
-            )`;
-  connection.query(query, [name , email], function (err, data) {
-    if (err) {
-      // some error occured
-    } else {
-      // successfully inserted into db
-    }
-  });
-  res.render('index', { title: 'Express' });
-});
 
 module.exports = router;

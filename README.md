@@ -1,4 +1,4 @@
-#RandomWordGenerator_AL
+# RandomWordGenerator_AL
 
 This app will generate random albanian words hopefully
 as a start
